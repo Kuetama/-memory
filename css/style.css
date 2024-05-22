@@ -269,3 +269,62 @@ button {
 .btn:hover:before {
   left: 100%;
 }
+
+
+
+@media (max-width: 999px) {
+  .card {
+    width: 150px;
+    height: 150px;
+    border-radius: 20px;
+  }
+
+  .level-select {
+    margin-bottom: 0;
+  }
+
+  .title {
+    margin: 0;
+    font-size: 20px;
+  }
+  .glow-on-hover{
+    margin-bottom: 10px;
+  }
+
+  .glow-on-hover {
+    margin-bottom: 10px;
+    font-size: 14px;
+  }
+}
+
+
+@media (max-width: 696px) {
+  .card {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    
+  }
+
+  .game {
+    max-width: 500px;
+    gap: 20px;
+  }
+
+  .glow-on-hover {
+    width: 150px;
+    height: 30px;
+  }
+}
+/* 
+@media (max-width: 696px) {
+  .game {
+    gap: 15px;
+  }
+} */
+
+@media (max-width: 424px) {
+  .game {
+    max-width: 350px;
+  }
+}
