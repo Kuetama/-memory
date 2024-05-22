@@ -277,6 +277,7 @@ button {
     width: 150px;
     height: 150px;
     border-radius: 20px;
+    font-size: 100px;
   }
 
   .level-select {
@@ -303,8 +304,9 @@ button {
     width: 40px;
     height: 40px;
     border-radius: 10px;
-    
+    font-size: 30px;
   }
+  
 
   .game {
     max-width: 500px;
@@ -316,12 +318,7 @@ button {
     height: 30px;
   }
 }
-/* 
-@media (max-width: 696px) {
-  .game {
-    gap: 15px;
-  }
-} */
+
 
 @media (max-width: 424px) {
   .game {
