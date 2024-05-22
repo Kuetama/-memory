@@ -1,0 +1,271 @@
+html {
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background: #000;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+:focus {
+  outline: none;
+}
+
+a:active,
+a:focus,
+a:hover {
+  outline: none;
+  text-decoration: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul {
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+.title {
+  font-size: 40px;
+  margin: 30px auto;
+  text-align: center;
+  color: #7a00ff;
+}
+
+button {
+  padding: 0;
+  border: none;
+  font: inherit;
+  color: inherit;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+
+}
+
+.game {
+  display: flex;
+  margin: auto;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 32px;
+}
+
+.card {
+  display: flex;
+  color: transparent;
+  background-color: #FF6600;
+  font-size: 150px;
+  font-weight: 600;
+  border-radius: 30px;
+  width: 230px;
+  height: 230px;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+  transition: 0.3s ease-in-out;
+  cursor: pointer;
+  box-shadow: 0px 0px 26px -5px rgba(255, 255, 255, 0.3);
+  transform: scaleX(-1);
+}
+
+.card.open {
+  background-color: #FFCC99;
+  color: #FF6600;
+  transition: 0.6s;
+  transform-style: preserve-3d;
+  position: relative;
+  transform: rotateY(-180deg);
+  transform: scaleX(1);
+}
+
+.card.success {
+  background: #CCFF99;
+  color: #66CC66;
+}
+
+.level {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 18px;
+  color: #fff;
+}
+
+.level-select {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 30px;
+}
+
+@media (max-width:999px) {
+  .container {
+    max-width: 740px;
+  }}
+
+
+.timer {
+  display: flex;
+  flex-direction: column;
+  max-width: fit-content;
+  margin: 0 auto 30px auto;
+}
+
+.timers {
+  background-color: #66CC66;
+  font-size: 20px;
+  width: fit-content;
+  text-align: center;
+  padding: 10px;
+  justify-content: center;
+  margin: auto;
+}
+
+.btn_row {
+  justify-content: center;
+  margin: auto;
+}
+
+.btn_timers {
+  color: #fff;
+  padding: 10px;
+  justify-content: center;
+  margin: auto;
+}
+
+.title__timer {
+  font-size: 16px;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #fff;
+}
+
+.glow-on-hover {
+  width: 220px;
+  height: 50px;
+  border: none;
+  outline: none;
+  color: #fff;
+  background: #111;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  border-radius: 10px;
+  margin: 0 auto 20px auto;
+  border: 1px solid #7a00ff;
+}
+
+.glow-on-hover:before {
+  content: '';
+  background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowing 20s linear infinite;
+  opacity: 0;
+  transition: opacity .3s ease-in-out;
+  border-radius: 10px;
+}
+
+.glow-on-hover:active {
+  color: #000
+}
+
+.glow-on-hover:active:after {
+  background: transparent;
+}
+
+.glow-on-hover:hover:before {
+  opacity: 1;
+}
+
+.glow-on-hover:after {
+  z-index: -1;
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #111;
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+}
+
+@keyframes glowing {
+  0% {
+    background-position: 0 0;
+  }
+
+  50% {
+    background-position: 400% 0;
+  }
+
+  100% {
+    background-position: 0 0;
+  }
+}
+
+
+.btn {
+  text-decoration: none;
+  border: 1px solid rgb(146, 148, 248);
+  position: relative;
+  overflow: hidden;
+  width: 220px;
+  height: 50px;
+  padding: 10px 20px;
+  color: #fff;
+  border-radius: 10px;
+  font-size: 20px;
+  font-weight: 500;
+  cursor: pointer;
+  margin: 0 auto 20px auto;
+}
+
+.btn:hover {
+  box-shadow: 1px 1px 25px 10px rgba(146, 148, 248, 0.4);
+}
+
+.btn:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(120deg, transparent, rgba(146, 148, 248, 0.4),transparent);
+  transition: all 650ms;
+}
+
+.btn:hover:before {
+  left: 100%;
+}
